@@ -1,7 +1,7 @@
 ![
 Clay Banks - Unslash (UL) #kBaf0DwBPbE](https://images.unsplash.com/photo-1584813470613-5b1c1cad3d69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&h=400&q=80)
 
-[![Latest Stable Version](https://poser.pugx.org/darkghosthunter/larasane/v/stable)](https://packagist.org/packages/darkghosthunter/larasane) [![License](https://poser.pugx.org/darkghosthunter/larasane/license)](https://packagist.org/packages/darkghosthunter/larasane) ![](https://img.shields.io/packagist/php-v/darkghosthunter/larasane.svg)  ![](https://github.com/DarkGhostHunter/Larasane/workflows/PHP%20Composer/badge.svg)  [![Coverage Status](https://coveralls.io/repos/github/DarkGhostHunter/Larasane/badge.svg?branch=master)](https://coveralls.io/github/DarkGhostHunter/Larasane?branch=master) [![Laravel Octane Compatible](https://img.shields.io/badge/Laravel%20Octane-Compatible-success?style=flat&logo=laravel)](https://github.com/laravel/octane)
+[![Latest Stable Version](https://poser.pugx.org/darkghosthunter/larasane/v/stable)](https://packagist.org/packages/darkghosthunter/larasane) [![License](https://poser.pugx.org/darkghosthunter/larasane/license)](https://packagist.org/packages/darkghosthunter/larasane) ![](https://img.shields.io/packagist/php-v/darkghosthunter/larasane.svg) ![](https://github.com/DarkGhostHunter/Larasane/workflows/PHP%20Composer/badge.svg)  [![Coverage Status](https://coveralls.io/repos/github/DarkGhostHunter/Larasane/badge.svg?branch=master)](https://coveralls.io/github/DarkGhostHunter/Larasane?branch=master) [![Laravel Octane Compatible](https://img.shields.io/badge/Laravel%20Octane-Compatible-success?style=flat&logo=laravel)](https://github.com/laravel/octane)
 
 # Larasane
 
@@ -12,9 +12,17 @@ Quickly sanitize text into safe-HTML using fluid methods.
 * PHP 7.4, 8.0 or later.
 * Laravel 7.x, 8.x or later.
 
+## Installation
+
+Just fire up Composer:
+
+    composer require darkghosthunter/larasane
+
+And that's it.
+
 ## Usage
 
-After you receive your HTML input you want to sanitize, use the `Sanitizer` facade to do it.
+After you receive the HTML input you want to sanitize, use the `Sanitizer` facade to do it.
 
 ```php
 <?php
@@ -25,6 +33,12 @@ $input = 'Trust <script src="https://malicio.us/code.js"></script> me!';
 
 echo Sanitizer::input($input)->sanitize($input); // "Trust me!"
 ```
+
+The sanitizer has a bunch of fluid methods you can chain to allow or disallow tags and attributes, and links.
+
+By default, Larasane cleans everything except the most basic tags: `a`, `b`, `br`, `blockquote`, `div`, `del`, `em`, `figcaption`, `figure`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `i`, `p`, `q`, `small`, `span`, `strong`, `sub`, `sup`.
+
+You can enable more tags by enabling [each of the included extensions](#code-allowed), or [create your own](#adding-sanitization-extensions). 
 
 ## Configuration
 
