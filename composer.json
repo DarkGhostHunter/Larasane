@@ -1,0 +1,59 @@
+{
+  "name": "darkghosthunter/larasane",
+  "description": "Quickly and easily secure HTML text.",
+  "keywords": [
+    "darkghosthunter",
+    "larasane",
+    "html",
+    "sanitize",
+    "laravel"
+  ],
+  "homepage": "https://github.com/darkghosthunter/larasane",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "type": "library",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Italo Israel Baeza Cabrera",
+      "email": "darkghosthunter@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4||^8.0",
+    "ext-mbstring": "*",
+    "illuminate/support": "6.*||7.*||8.*",
+    "tgalopin/html-sanitizer": "^1.4.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.2||^5.18||^v6.17.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DarkGhostHunter\\Larasane\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --coverage-clover build/logs/clover.xml",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DarkGhostHunter\\Larasane\\LarasaneServiceProvider"
+      ],
+      "aliases": {
+        "Sanitizer": "DarkGhostHunter\\Larasane\\Facades\\Sanitizer"
+      }
+    }
+  }
+}
