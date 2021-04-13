@@ -27,7 +27,8 @@
     "tgalopin/html-sanitizer": "^1.4.0"
   },
   "require-dev": {
-    "orchestra/testbench": "^4.2||^5.18||^v6.17.0"
+    "orchestra/testbench": "^4.2||^5.18||^v6.17.0",
+    "phpunit/phpunit": "^9.5.4"
   },
   "autoload": {
     "psr-4": {
