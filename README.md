@@ -40,6 +40,8 @@ By default, Larasane cleans everything except the most basic tags: `a`, `b`, `br
 
 You can enable more tags by enabling [each of the included extensions](#code-allowed), or [create your own](#adding-sanitization-extensions). 
 
+> If you need to strip all tags from a string, use [`strip_tags()`](https://www.php.net/manual/function.strip-tags.php) instead.
+
 ## Configuration
 
 Larasane works out of the box to sanitize any tag that is not-basic, but you can configure the defaults by publishing the config file.
